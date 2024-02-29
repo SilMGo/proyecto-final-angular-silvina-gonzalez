@@ -1,0 +1,88 @@
+{
+  "users": [
+    {
+      "id": "8",
+      "firstName": "Emiliano",
+      "lastName": "Tello",
+      "email": "321@321.com",
+      "password": "321",
+      "role": "ADMIN",
+      "token": "4355gfee33fef"
+    },
+    {
+      "id": "9",
+      "firstName": "Roberto",
+      "lastName": "Flor",
+      "email": "Eri2574@gmail.com",
+      "password": "123243",
+      "role": "ADMIN",
+      "token": "sd33fsdsdsdgsdfgg34"
+    },
+    {
+      "id": 666,
+      "name": "Julio",
+      "lastName": "Lz",
+      "email": "asd125@gmail.com",
+      "rol": "ADMIN"
+    }
+  ],
+  "products": [
+    {
+      "id": "2",
+      "name": "Teclado Mecanico",
+      "createdAt": "2024-02-19T23:32:38.758Z"
+    }
+  ],
+  "sales": [
+    {
+      "id": "1",
+      "userId": null,
+      "productId": 2
+    },
+    {
+      "id": "307f",
+      "userId": "jddld",
+      "productId": 2
+    },
+    {
+      "id": "6818",
+      "productId": 2,
+      "userId": "jddld"
+    },
+    {
+      "id": "9a30",
+      "productId": 2,
+      "userId": "jddld"
+    },
+    {
+      "id": "66dc",
+      "productId": 2,
+      "userId": "jddld"
+    },
+    {
+      "id": "630f",
+      "productId": 2,
+      "userId": "jddld"
+    },
+    {
+      "id": "917f",
+      "productId": 2,
+      "userId": "jddld"
+    },
+    {
+      "id": "5868",
+      "productId": 2,
+      "userId": ""
+    },
+    {
+      "id": "d2ec",
+      "userId": "jddld",
+      "productId": 2
+    },
+    {
+      "id": "264a",
+      "productId": "",
+      "userId": ""
+    }
+  ]
+}

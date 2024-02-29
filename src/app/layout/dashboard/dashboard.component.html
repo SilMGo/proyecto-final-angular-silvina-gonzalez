@@ -1,0 +1,86 @@
+<!-- inicio sidebarv-->
+
+<mat-drawer-container class="dashboard-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <mat-nav-list>
+        <a
+        #homeLink="routerLinkActive"
+        routerLinkActive
+        [activated]="homeLink.isActive"
+        routerLink="home"
+        mat-list-item
+        >Inicio</a
+      >
+       
+        <a 
+        #alumnosLInk="routerLinkActive"
+        routerLinkActive
+        [activated]="alumnosLInk.isActive "
+        routerLink="alumnos-users" 
+        mat-list-item>ALUMNOS
+      </a>
+       
+      <a 
+      #cursosLInk="routerLinkActive"
+      routerLinkActive
+      [activated]="cursosLInk.isActive "
+      routerLink="cursos-products" 
+      mat-list-item>CURSOS
+    </a>
+
+    <a
+        #inscripcionesLink="routerLinkActive"
+        routerLinkActive
+        [activated]="inscripcionesLink.isActive"
+        routerLink="inscripciones"
+        mat-list-item
+        >inscripciones</a
+      >
+   
+    
+  
+
+      <a (click)="logout()" 
+        routerLinkActive
+        
+        routerLink="aunth/loguin-aunth" 
+       mat-list-item>Cerrar sesion</a>
+      </mat-nav-list>
+
+    </mat-drawer>
+<!-- fin sidebar-->
+
+      <div class="example-sidenav-content">
+
+    <!-- inicio toolbar-->
+      <mat-toolbar color="primary">
+          <!-- boton del menu-->
+        <button  
+        (click)="drawer.toggle()"
+        mat-icon-button 
+        class="example-icon" 
+        aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Mi Aplicación</span>
+               <span class="example-spacer"></span>
+
+        <!-- para mostrar usuario  conectado en toobar-->>
+      <div *ngIf="authUser$ | async; let user">
+        <span>{{ user.firstName }} {{ user.lastName }}</span>
+        <p class="m-0">{{ user.email }}</p>
+      </div>
+      </mat-toolbar>
+     <!-- fin toolbar-->
+   
+
+<!--ver aqui pagina alumnos-users-->
+<div class="p-3">
+  <router-outlet></router-outlet>
+<!-- <app-pipes></app-pipes> --> 
+<!-- <app-alumnos-users></app-alumnos-users> -->
+</div>
+     </div>
+     </mat-drawer-container>
+    
+ 
