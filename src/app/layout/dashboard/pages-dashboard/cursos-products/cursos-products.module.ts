@@ -27,6 +27,7 @@ import { ProductDialogComponent } from './components/product-dialog/product-dial
     CommonModule,
     SharedModule, // contiene todos los imports de angular material
     CursosProductsRoutingModule,
+    SharedModule
     
     
   ],

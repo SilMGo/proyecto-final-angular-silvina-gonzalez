@@ -13,7 +13,7 @@ const ROLES_DB: string[] = ['ADMIN', 'USER'];
 let USERS_DB: User[] = [];
 
 
-@Injectable ()
+@Injectable  ({ providedIn: 'root' })
 export class AlumnosService {
     
     constructor(
@@ -84,10 +84,10 @@ deleteUser(userID: number) {
     .delete<User>(`${environment.apiURL}/users/${userID}`)
     .pipe(mergeMap(() => this.getUsers()));
 }
-
 getAllBuyers(): Observable<User[]> {
   return this.httpClient.get<User[]>(
-    `${environment.apiURL}/users?role=BUYER`
+    `${environment.apiURL}/users?role=USER`
   );
 }
+
 }

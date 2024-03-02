@@ -5,6 +5,8 @@ import { InscActions } from './store/insc.actions';
 import { selectInscripIsLoading, selectInscripciones } from './store/insc.selectors';
 import { Observable, Subject, Subscription, takeUntil } from 'rxjs';
 import {  Sale } from './models';
+import { MatDialog } from '@angular/material/dialog';
+import { InscripcionesDialogComponent } from './components/inscripciones-dialog/inscripciones-dialog.component';
 
 @Component({
   selector: 'app-inscripciones',
@@ -24,7 +26,7 @@ export class InscripcionesComponent  implements OnDestroy{
 
   destroyed$ = new Subject();
 
-  constructor(private store: Store, ) { 
+  constructor(private store: Store, private matdialog: MatDialog ) { 
      
      //this.sales$ = this.store.select(selectSales);
 
@@ -41,7 +43,11 @@ export class InscripcionesComponent  implements OnDestroy{
     this.isLoading$ = this.store.select(selectInscripIsLoading);
   this.store.dispatch(InscActions.loadInscs());
   }
-
+  
+   //met para abril el modal dialog
+  createInscripcion(): void {
+    this.matdialog.open(InscripcionesDialogComponent);
+  }
   ngOnDestroy(): void {
     console.log('se destruyo inscripcionesComponent');
     this.destroyed$.next(true);
@@ -49,5 +55,5 @@ export class InscripcionesComponent  implements OnDestroy{
   }
  
   }
-
- 
+  
+  

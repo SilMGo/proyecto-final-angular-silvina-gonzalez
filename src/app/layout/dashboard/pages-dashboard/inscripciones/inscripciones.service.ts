@@ -12,9 +12,7 @@ export class InscripcionesService {
 
   getInscripciones() {
     return this.http.get<Sale[]>(
-      `${environment.apiURL}/inscriptions?_embed=user&_embed=Course`
-      //`${environment.apiURL}/inscriptions?_embed=user&_embed=course`
-    );
+      `${environment.apiURL}/inscriptions?_embed=user&_embed=Course`);
   }
   getSalesById(userId: string | number) {
     return this.http.get<User>(`${environment.apiURL}/users/${userId}`).pipe(

@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ValidationErrorsPipe } from './validation-errors.pipe';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -50,7 +51,7 @@ import { ValidationErrorsPipe } from './validation-errors.pipe';
      MatInputModule,
      MatFormFieldModule,
      MatCardModule,
-     
+     MatSelectModule
       
     
     ]

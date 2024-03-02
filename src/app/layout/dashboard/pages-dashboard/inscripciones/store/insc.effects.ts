@@ -4,14 +4,14 @@ import { catchError, map, concatMap } from 'rxjs/operators';
 import { Observable, EMPTY, of } from 'rxjs';
 import { InscActions } from './insc.actions';
 import { InscripcionesService } from '../inscripciones.service';
+import { AlumnosService } from '../../alumnos-users/alumnos-users.service';
 
 
 @Injectable()
 export class InscEffects {
-
+//efecto de carga de inscripciones
   loadInscs$ = createEffect(() => {
     return this.actions$.pipe(
-
       ofType(InscActions.loadInscs),
       concatMap(() =>
         /** An EMPTY observable only emits completion. Replace with your own observable API request */
@@ -21,7 +21,24 @@ export class InscEffects {
       )
     );
   });
+// Efecto de carga de usuarios/alumn
+  loadAlumnos$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(InscActions.loadAlumnos),
+      concatMap(() =>
+        this.alumnosService.getAllBuyers().pipe(
+          map((resp) => InscActions.loadBuyersSuccess({ data: resp })),
+          catchError((error) => {
+            return of(InscActions.loadBuyersFailure({ error }));
+          })
+        )
+      )
+    );
+  });
 
-
-  constructor(private actions$: Actions, private inscripcionesService: InscripcionesService) {}
+  constructor(
+    private actions$: Actions, 
+    private inscripcionesService: InscripcionesService,
+    private alumnosService:AlumnosService 
+    ) {}
 }

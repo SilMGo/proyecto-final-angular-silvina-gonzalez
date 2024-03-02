@@ -15,7 +15,16 @@
       "lastName": "Flor",
       "email": "Eri2574@gmail.com",
       "password": "123243",
-      "role": "ADMIN",
+      "role": "USER",
+      "token": "sd33fsdsdsdgsdfgg34"
+    },
+    {
+      "id": "999",
+      "firstName": "RobertoOOOOO",
+      "lastName": "Prueba",
+      "email": "Eri12323442574@gmail.com",
+      "password": "123",
+      "role": "USER",
       "token": "sd33fsdsdsdgsdfgg34"
     },
     {
@@ -23,7 +32,7 @@
       "name": "Julio",
       "lastName": "Lz",
       "email": "asd125@gmail.com",
-      "rol": "ADMIN"
+      "rol": "USER"
     }
   ],
   "courses": [

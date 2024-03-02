@@ -15,9 +15,12 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { appReducers } from './core/store/index-store';
 import { EffectsModule } from '@ngrx/effects';
 
+
 @NgModule({
   declarations: [
     AppComponent,
+    
+    
    
   ],
   imports: [
