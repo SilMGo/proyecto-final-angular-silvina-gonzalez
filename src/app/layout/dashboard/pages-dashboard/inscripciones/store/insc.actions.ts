@@ -12,7 +12,7 @@ export const InscActions = createActionGroup({
     'Load Inscs Failure': props<{ error: unknown }>(),
   //Accion de carga de usuarios/alumn
   'Load Alumnos': emptyProps(),
-    'Load Buyers Success': props<{ data: User[] }>(),
-    'Load Buyers Failure': props<{ error: unknown }>(),
+    'Load Alumnos Success': props<{ data: User[] }>(),
+    'Load Alumnos Failure': props<{ error: unknown }>(),
   },
 });

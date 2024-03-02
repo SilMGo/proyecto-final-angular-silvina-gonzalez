@@ -27,9 +27,9 @@ export class InscEffects {
       ofType(InscActions.loadAlumnos),
       concatMap(() =>
         this.alumnosService.getAllBuyers().pipe(
-          map((resp) => InscActions.loadBuyersSuccess({ data: resp })),
+          map((resp) => InscActions.loadAlumnosSuccess({ data: resp })),
           catchError((error) => {
-            return of(InscActions.loadBuyersFailure({ error }));
+            return of(InscActions.loadAlumnosFailure({ error }));
           })
         )
       )
