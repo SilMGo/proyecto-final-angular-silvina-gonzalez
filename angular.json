@@ -40,16 +40,16 @@
               "node_modules/primeflex/primeflex.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
-             
-             
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
-                {"replace": "src/enviroments/environment.ts",
-              "with": "src/enviroments/environment.prod.ts"}
+                {
+                  "replace": "src/enviroments/environment.ts",
+                  "with": "src/enviroments/environment.prod.ts"
+                }
               ],
               "budgets": [
                 {
@@ -114,6 +114,9 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
   }
 }

@@ -63,13 +63,8 @@ export class AuthService {
            }
           })
         )
-       
-        
-       
-      }
-     
-    
-      logout(): void {
+          }
+          logout(): void {
        // this.authUser = null
        this.store.dispatch(AuthActions.logout())
         this.router.navigate(['auth', 'login']);
@@ -90,8 +85,9 @@ export class AuthService {
               localStorage.removeItem('token');
               return false;
             }
-          })
-        )
+          }),
+          catchError(()=> of (false))
+        );
       }
 
        
